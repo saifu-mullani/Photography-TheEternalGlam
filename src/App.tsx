@@ -7,6 +7,7 @@ import Services from "./sections/Services";
 import Packages from "./sections/Packages";
 import Testimonials from "./sections/Testimonials";
 import Contact from "./sections/Contact";
+import Chatbot from "./components/Chatbot";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Testimonials />
         <Contact />
       </main>
+      <Chatbot />
     </>
   );
 }

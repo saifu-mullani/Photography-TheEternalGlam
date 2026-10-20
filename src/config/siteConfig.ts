@@ -1,22 +1,19 @@
 export const siteConfig = {
-  name: "Wedding by Pick Your Clicks",
-  tagline: "We don't just capture moments. We preserve the way they felt.",
-  subTagline: "Every story is different. Every frame should be, too.",
-  email: "hello@yourstudio.com",
-  phone: "+91 90000 00000",
-  whatsapp: "919000000000",
-  location: "Pune, India · Available worldwide",
-  // Optional override. Leave "" to use the first image in public/images/hero/
+  name: "The Eternal Glam",
+  tagline: "Raw | Unscripted | Timeless",
+  subTagline: "Wedding stories captured across India, with care for every moment.",
+  email: "theeternalglamofficial@gmail.com",
+  phone: "+91 8605064852",
+  whatsapp: "918605064852",
+  location: "Shirol Wadi Road, Apte Colony, Jaysingpur, Maharashtra 416101, Available across India",
   heroImageOverride: "",
-  // Set "" to hide any entry
   social: {
-    instagram: "https://instagram.com/yourstudio",
-    facebook: "https://facebook.com/yourstudio",
-    youtube: "https://youtube.com/@yourstudio",
+    instagram: "https://www.instagram.com/the_eternal_glam/",
+    facebook: "",
+    youtube: "https://www.youtube.com/watch?v=7nHZHua6_5A",
     pinterest: "",
-    whatsapp: "https://wa.me/919000000000",
+    whatsapp: "https://wa.me/918605064852",
     x: "",
   } as Record<string, string>,
-  // Optional endpoint (e.g. Formspree). Leave "" to fall back to email.
   enquiryEndpoint: "",
 };

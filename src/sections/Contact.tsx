@@ -1,10 +1,12 @@
 import { useState, FormEvent } from "react";
 import { siteConfig } from "../config/siteConfig";
-import { sendEnquiry } from "../services/enquiryService";
+import { enquiryEmailLinks, sendEnquiry, type Enquiry } from "../services/enquiryService";
 import { categories } from "../data/categories";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "mailto" | "error">("idle");
+  const [emailDraft, setEmailDraft] = useState("");
+  const [emailOptions, setEmailOptions] = useState<ReturnType<typeof enquiryEmailLinks> | null>(null);
 
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -12,7 +14,11 @@ export default function Contact() {
     const d = Object.fromEntries(new FormData(form)) as Record<string, string>;
     setStatus("sending");
     try {
-      const r = await sendEnquiry({ name: d.name, email: d.email, phone: d.phone, type: d.type, date: d.date, message: d.message });
+      const enquiry: Enquiry = { name: d.name, email: d.email, phone: d.phone, type: d.type, date: d.date, message: d.message };
+      const r = await sendEnquiry(enquiry);
+      const options = r === "mailto" ? enquiryEmailLinks(enquiry) : null;
+      setEmailOptions(options);
+      setEmailDraft(options?.default || "");
       setStatus(r);
       if (r === "sent") form.reset();
     } catch {
@@ -25,12 +31,13 @@ export default function Contact() {
   return (
     <section id="contact" className="section contact">
       <div>
-        <p className="eyebrow">Contact</p>
-        <h2>Let's Plan Your Story.</h2>
+        <p className="eyebrow">Contact The Eternal Glam</p>
+        <h2>Let’s Plan Your Story.</h2>
         <p className="muted">Tell us a little about your day, your idea, or your dream shoot.</p>
         <p>
           <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a><br />
-          {siteConfig.phone}<br />
+          <a href={`tel:${siteConfig.phone.replace(/ /g, "")}`}>{siteConfig.phone}</a><br />
+          <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp us</a><br />
           {siteConfig.location}
         </p>
         {socials.length > 0 && (
@@ -53,8 +60,8 @@ export default function Contact() {
         <input name="date" type="date" aria-label="Preferred date" />
         <textarea name="message" rows={5} placeholder="Tell us about your story" required />
         <button className="btn" disabled={status === "sending"}>{status === "sending" ? "Sending…" : "Send Enquiry"}</button>
-        {status === "sent" && <p className="ok">Thank you. We'll be in touch shortly.</p>}
-        {status === "mailto" && <p className="ok">Your email app should open with the enquiry ready to send.</p>}
+        {status === "sent" && <p className="ok">Thank you. We’ll be in touch shortly.</p>}
+        {status === "mailto" && <p className="ok">Your enquiry is ready to email. <a href={emailDraft}>Default mail app</a> | <a href={emailOptions?.gmail} target="_blank" rel="noopener noreferrer">Gmail</a> | <a href={emailOptions?.outlook} target="_blank" rel="noopener noreferrer">Outlook</a>. Choose an option, then press Send.</p>}
         {status === "error" && <p className="err">Something went wrong. Please email us directly.</p>}
       </form>
     </section>
