@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-10-20T17:54:55.025Z",
+  "images": {
+    "about": [],
+    "couple": [],
+    "custom-concepts": [],
+    "engagement": [
+      {
+        "src": "images/engagement/pexels-heytam-35984124.jpg",
+        "width": 4032,
+        "height": 3024,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/engagement/pexels-photographer-gyanu-1357219108-38259809.jpg",
+        "width": 5472,
+        "height": 3648,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/engagement/pexels-rebornfilmes-38348223.jpg",
+        "width": 2442,
+        "height": 4053,
+        "alt": "",
+        "caption": ""
+      }
+    ],
+    "events": [],
+    "family-lifestyle": [],
+    "fashion-editorial": [],
+    "hero": [],
+    "maternity-newborn": [],
+    "post-wedding": [],
+    "pre-wedding": [
+      {
+        "src": "images/pre-wedding/pexels-camera-treasure-928922-17704087.jpg",
+        "width": 4480,
+        "height": 6720,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/pre-wedding/pexels-hasmukh-abchung-413074376-32495350.jpg",
+        "width": 4000,
+        "height": 6000,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/pre-wedding/pexels-hasmukh-abchung-413074376-32495434.jpg",
+        "width": 4000,
+        "height": 6000,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/pre-wedding/pexels-shootsaga-production-2161060223-37439324.jpg",
+        "width": 4672,
+        "height": 7008,
+        "alt": "",
+        "caption": ""
+      }
+    ],
+    "travel-destination": [],
+    "wedding": [
+      {
+        "src": "images/wedding/download2.jpg",
+        "width": 148,
+        "height": 148,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/wedding/pexels-keyurmali7-7153785.jpg",
+        "width": 4480,
+        "height": 6720,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/wedding/pexels-rahulp9800-25489380.jpg",
+        "width": 3119,
+        "height": 5896,
+        "alt": "",
+        "caption": ""
+      },
+      {
+        "src": "images/wedding/pexels-star-film-production-2163423655-38922738.jpg",
+        "width": 3648,
+        "height": 5472,
+        "alt": "",
+        "caption": ""
+      }
+    ]
+  },
+  "videos": []
+}

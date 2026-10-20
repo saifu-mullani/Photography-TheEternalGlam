@@ -1,0 +1,28 @@
+{
+  "name": "photography-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "media": "node scripts/generate-manifest.mjs",
+    "predev": "npm run media",
+    "dev": "vite",
+     "dev:watch": "nodemon --watch src --watch index.html --ext ts,tsx,js,jsx,html --exec \"npm run dev\"",
+    "prebuild": "npm run media",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "image-size": "^1.1.1",
+    "nodemon": "^3.1.14",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.0"
+  }
+}
