@@ -3,7 +3,7 @@ import { siteConfig } from "../config/siteConfig";
 
 const links = [
   ["About", "about"], ["Gallery", "gallery"], ["Films", "films"],
-  ["Services", "services"], ["Packages", "packages"], ["Contact", "contact"],
+  ["Services", "services"], ["Packages", "packages"], ["Feedback", "feedback"], ["Contact", "contact"],
 ];
 
 export default function Nav() {
